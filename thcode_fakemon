@@ -1,0 +1,601 @@
+<!-- 
+
+Code by cyborb
+This code is heavily frankensteined from https://toyhou.se/20291153.f2u-1-pokemon-compact by @skygummi
+
+Notes:
+Color References For PKMN Types: https://toyhou.se/2621177.color-references-bs-pkmn-
+If you have CSS you can use the type snippets from here: https://toyhou.se/11506288.-f2u-pok-mon-snippets
+
+Any text stuff can be made into scrollboxes by adding style="max-height:300px; overflow-y:auto;"
+to a container with text
+
+please let me know if you find some sort of weird bug in this! (via tumblr/twitter under the same username)
+
+-->
+<div class="container-fluid p-0 my-auto" style="max-width: 800px;">
+	<!-- TITLE BAR -->
+	<div class="bg-primary p-2 px-3 rounded">
+		<div class="d-flex">
+			<p class="my-auto" style="font-size:2rem;">NAME</p>
+			<hr class="text-warning my-auto" style="flex-grow: 1; margin:10px; border:2px dashed;">
+			<!-- Portrait Here. Uses 80x80px by default. PMD portraits may need upscaling for best results. If you change the size, the header will adjust with it.-->
+			<div class="card" style="padding:3px;"><img src="https://raw.githubusercontent.com/PMDCollab/SpriteCollab/master/portrait/0445/Normal.png" style="height:80px; width:80px;"></div>
+		</div>
+	</div>
+	<!-- REST OF PAGE -->
+	<div class="row no-gutters bg-faded p-1">
+		<div class=" card col-sm-5 p-2" style="min-width: 100px; border:none; margin:10px;">
+			<!-- Sidebar Image -->
+			<div class="card rounded" style=" border:none; min-height: 250px; background-image:url(https://archives.bulbagarden.net/media/upload/a/a8/0445Garchomp.png); background-size: cover;"></div>
+		</div>
+		<div class="col-sm p-1" style="min-width: 100px; margin:10px;">
+			<!-- Information Section -->
+			<div class="card" style="border:0;">
+				<div class="card d-flex" style="border:none; flex-direction:row; margin:8px;">
+					<p class="text-primary" style="flex-grow: 0; font-weight: bold;"> SPECIES </p>
+					<hr class="text-warning" style="flex-grow: 1; margin: 10px;">
+					<span> species </span>
+				</div>
+				<div class="card d-flex" style="border:none; flex-direction:row; margin:8px;">
+					<p class="text-primary" style="flex-grow: 0; font-weight: bold;"> CLASSIFICATION </p>
+					<hr class="text-warning" style="flex-grow: 1; margin: 10px;">
+					<span> category pokemon </span>
+				</div>
+				<div class="card d-flex" style="border:none; flex-direction:row; margin:8px;">
+					<p class="text-primary" style="flex-grow: 0; font-weight: bold;"> TYPE </p>
+					<hr class="text-warning" style="flex-grow: 1; margin: 10px;">
+					<span>
+						<span class="p-1 rounded" style="background-color:#7038F8">DRAGON</span>
+						<span class="p-1 rounded" style="background-color:#E0C068">GROUND</span>
+					</span>
+				</div>
+				<div class="card d-flex" style="border:none; flex-direction:row; margin:8px;">
+					<p class="text-primary" style="flex-grow: 0; font-weight: bold;"> HEIGHT </p>
+					<hr class="text-warning" style="flex-grow: 1; margin: 10px;">
+					<span> height </span>
+				</div>
+				<div class="card d-flex" style="border:none; flex-direction:row; margin:8px;">
+					<p class="text-primary" style="flex-grow: 0; font-weight: bold;"> WEIGHT </p>
+					<hr class="text-warning" style="flex-grow: 1; margin: 10px;">
+					<span> weight </span>
+				</div>
+				<div class="card d-flex" style="border:none; flex-direction:row; margin:8px;">
+					<p class="text-primary" style="flex-grow: 0; font-weight: bold;"> ABILITIES </p>
+					<hr class="text-warning" style="flex-grow: 1; margin: 10px;">
+					<span> ability 1, ability 2 </span>
+				</div>
+				<div class="card d-flex" style="border:none; flex-direction:row; margin:8px;">
+					<p class="text-primary" style="flex-grow: 0; font-weight: bold;"> GENDER RATIO </p>
+					<hr class="text-warning" style="flex-grow: 1; margin: 10px;">
+					<!-- can use fa-ban for genderless -->
+					<span> 50% <i class="fas fa-mars"></i> / 50% <i class="fas fa-venus"></i>
+					</span>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- TABS  -->
+	<div class="bg-faded p-2">
+		<ul class="nav nav-tabs nav-justified card-header-tabs mb-1 no-gutters">
+			<li class="nav-item col-md-3 mb-1"><a class="bg-faded btn btn-block btn-outline-primary active" style="font-weight:bold" data-toggle="tab" href="#tab1">DATA</a></li>
+			<li class="nav-item col-md-3 mb-1"><a class="bg-faded btn btn-block btn-outline-primary" style="font-weight:bold" data-toggle="tab" href="#tab2">MOVES</a></li>
+			<li class="nav-item col-md-3 mb-1"><a class="bg-faded btn btn-block btn-outline-primary" style="font-weight:bold" data-toggle="tab" href="#tab3">BIOLOGY</a></li>
+			<li class="nav-item col-md-3 mb-1"><a class="bg-faded btn btn-block btn-outline-primary" style="font-weight:bold" data-toggle="tab" href="#tab4">SPRITES</a></li>
+		</ul>
+		<!-- TAB CONTENTS -->
+		<div class="tab-content">
+			<!-- GAME DATA TAB -->
+			<div class="tab-pane fade active show" id="tab1">
+				<div class="card p-3" style="border:none">
+					<div class="p-3">
+						<!-- ABILITIES -->
+						<div class="card d-flex text-primary" style="flex-direction:row; border:none; font-size:1.5rem; align-items:center;"> ABILITIES
+							<hr class="text-warning" style="flex-grow: 1; margin: 10px; border:1px dashed;">
+						</div>
+						<div class="p-3">
+							<div style="font-weight:bold">ABILITY ONE</div>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris aliquet enim massa. Vestibulum at efficitur nibh. Nunc convallis euismod varius. Aliquam eu suscipit ligula, in dignissim tellus. Phasellus ullamcorper metus magna.</p>
+							<div style="font-weight:bold">ABILITY TWO</div>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris aliquet enim massa. Vestibulum at efficitur nibh. Nunc convallis euismod varius. Aliquam eu suscipit ligula, in dignissim tellus. Phasellus ullamcorper metus magna.</p>
+						</div>
+						<!-- BASE STATS -->
+						<div class="card d-flex text-primary" style="flex-direction:row; border:none; font-size:1.5rem; align-items:center;"> BASE STATS
+							<hr class="text-warning" style="flex-grow: 1; margin: 10px; border:1px dashed;">
+						</div>
+						<!-- adjust width for base stat bars-->
+						<div class="row justify-content-start no-gutters px-3 pt-3 pb-1">
+							<div class="col-3 col-sm-2" style="font-weight:bold">HP</div>
+							<div class="col-1 text-right px-3">100</div>
+							<div class="col-sm-9 progress" style="height:2em">
+								<div class="progress-bar bg-success" style="width:50%; height:2em"></div>
+							</div>
+						</div>
+						<div class="row no-gutters px-3 py-1">
+							<div class="col-3 col-sm-2" style="font-weight:bold">Attack</div>
+							<div class="col-1 text-right px-3">100</div>
+							<div class="col-sm-9 progress" style="height:2em">
+								<div class="progress-bar bg-success" style="width:50%; height:2em"></div>
+							</div>
+						</div>
+						<div class="row no-gutters px-3 py-1">
+							<div class="col-3 col-sm-2" style="font-weight:bold">Defense</div>
+							<div class="col-1 text-right px-3">100</div>
+							<div class="col-sm-9 progress" style="height:2em">
+								<div class="progress-bar bg-success" style="width:50%; height:2em"></div>
+							</div>
+						</div>
+						<div class="row no-gutters px-3 py-1">
+							<div class="col-3 col-sm-2" style="font-weight:bold">Sp. Atk</div>
+							<div class="col-1 text-right px-3">100</div>
+							<div class="col-sm-9 progress" style="height:2em">
+								<div class="progress-bar bg-success" style="width:50%; height:2em"></div>
+							</div>
+						</div>
+						<div class="row no-gutters px-3 py-1">
+							<div class="col-3 col-sm-2" style="font-weight:bold">Sp. Def</div>
+							<div class="col-1 text-right px-3">100</div>
+							<div class="col-sm-9 progress" style="height:2em">
+								<div class="progress-bar bg-success" style="width:50%; height:2em"></div>
+							</div>
+						</div>
+						<div class="row no-gutters px-3 py-1">
+							<div class="col-3 col-sm-2" style="font-weight:bold">Speed</div>
+							<div class="col-1 text-right px-3">100</div>
+							<div class="col-sm-9 progress" style="height:2em">
+								<div class="progress-bar bg-success" style="width:50%; height:2em"></div>
+							</div>
+						</div>
+						<div class="row no-gutters px-3 pt-1 pb-3" style="font-weight:bold">
+							<div class="col-3 col-sm-2">Total</div>
+							<div class="col-1 text-right px-3">600</div>
+						</div>
+						<!-- DEX ENTRIES -->
+						<div class="card d-flex text-primary" style="flex-direction:row; border:none; font-size:1.5rem; align-items:center;"> POKEDEX ENTRIES
+							<hr class="text-warning" style="flex-grow: 1; margin: 10px; border:1px dashed;">
+						</div>
+						<div class="p-3">
+							<div style="font-weight:bold">DEX ONE</div>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris aliquet enim massa. Vestibulum at efficitur nibh. Nunc convallis euismod varius. Aliquam eu suscipit ligula, in dignissim tellus. Phasellus ullamcorper metus magna.</p>
+							<div style="font-weight:bold">DEX TWO</div>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris aliquet enim massa. Vestibulum at efficitur nibh. Nunc convallis euismod varius. Aliquam eu suscipit ligula, in dignissim tellus. Phasellus ullamcorper metus magna.</p>
+						</div>
+						<!-- EVOLUTION -->
+						<div class="card d-flex text-primary" style="flex-direction:row; border:none; font-size:1.5rem; align-items:center;"> EVOLUTIONARY LINE
+							<hr class="text-warning" style="flex-grow: 1; margin: 10px; border:1px dashed;">
+						</div>
+						<!-- can add links to images/evo names -->
+						<div class="row no-gutters mb-1 p-3 justify-content-center">
+							<div class="col-sm-3">
+								<div class="card rounded" style=" border:none; min-height: 150px; bg-primary;">
+									<div class="card-body">
+										<img class="card-img-top rounded" src="https://archives.bulbagarden.net/media/upload/thumb/6/68/0443Gible.png/250px-0443Gible.png">
+										<p class="card-text p-1 text-center">Gible</p>
+									</div>
+								</div>
+							</div>
+							<div class="col-sm-1 text-center px-1 py-sm-5">Lv. 24 <i class="fas fa-arrow-right"></i></div>
+							<div class="col-sm-3">
+								<div class="card rounded" style=" border:none; min-height: 150px; bg-primary;">
+									<div class="card-body">
+										<img class="card-img-top rounded" src="https://archives.bulbagarden.net/media/upload/thumb/f/f2/0444Gabite.png/250px-0444Gabite.png">
+										<p class="card-text p-1 text-center">Gabite</p>
+									</div>
+								</div>
+							</div>
+							<!-- if only 2 stages you can get rid of this one and it will adjust automatically-->
+							<div class="col-sm-1 text-center px-1 py-sm-5">Lv. 48 <i class="fas fa-arrow-right"></i></div>
+							<div class="col-sm-3">
+								<div class="card rounded" style=" border:none; min-height: 150px; bg-primary;">
+									<div class="card-body">
+										<img class="card-img-top rounded" src="https://archives.bulbagarden.net/media/upload/a/a8/0445Garchomp.png">
+										<p class="card-text p-1 text-center">Garchomp</p>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- type effectiveness chart -->
+						<!-- change backgrounds with bg-success/warning/danger -->
+						<div class="card d-flex text-primary" style="flex-direction:row; border:none; font-size:1.5rem; align-items:center;"> TYPE EFFECTIVENESS
+							<hr class="text-warning" style="flex-grow: 1; margin: 10px; border:1px dashed;">
+						</div>
+						<!-- row 1 -->
+						<div class="py-3 row no-gutters justify-content-center" style="font-weight:bold">
+							<div class="col-1 card text-center border border-0" data-toggle="tooltip" title="normal">
+								<img src="https://raw.githubusercontent.com/msikma/pokesprite/master/misc/types/gen8/normal.png" class="card-img-top">
+								<div class="card-body rounded">
+									<p class="card-text"></p>
+								</div>
+							</div>
+							<div class="col-1 card text-center border border-0" data-toggle="tooltip" title="fire">
+								<img src="https://raw.githubusercontent.com/msikma/pokesprite/master/misc/types/gen8/fire.png" class="card-img-top">
+								<div class="card-body rounded bg-warning">
+									<p class="card-text">x½</p>
+								</div>
+							</div>
+							<div class="col-1 card text-center border border-0" data-toggle="tooltip" title="water">
+								<img src="https://raw.githubusercontent.com/msikma/pokesprite/master/misc/types/gen8/water.png" class="card-img-top">
+								<div class="card-body rounded">
+									<p class="card-text"></p>
+								</div>
+							</div>
+							<div class="col-1 card text-center border border-0" data-toggle="tooltip" title="electric">
+								<img src="https://raw.githubusercontent.com/msikma/pokesprite/master/misc/types/gen8/electric.png" class="card-img-top">
+								<div class="card-body rounded bg-danger">
+									<p class="card-text">x0</p>
+								</div>
+							</div>
+							<div class="col-1 card text-center border border-0" data-toggle="tooltip" title="grass">
+								<img src="https://raw.githubusercontent.com/msikma/pokesprite/master/misc/types/gen8/grass.png" class="card-img-top">
+								<div class="card-body rounded">
+									<p class="card-text"></p>
+								</div>
+							</div>
+							<div class="col-1 card text-center border border-0" data-toggle="tooltip" title="ice">
+								<img src="https://raw.githubusercontent.com/msikma/pokesprite/master/misc/types/gen8/ice.png" class="card-img-top">
+								<div class="card-body rounded bg-primary">
+									<p class="card-text">x4</p>
+								</div>
+							</div>
+							<div class="col-1 card text-center border border-0" data-toggle="tooltip" title="fighting">
+								<img src="https://raw.githubusercontent.com/msikma/pokesprite/master/misc/types/gen8/fighting.png" class="card-img-top">
+								<div class="card-body rounded">
+									<p class="card-text"></p>
+								</div>
+							</div>
+							<div class="col-1 card text-center border border-0" data-toggle="tooltip" title="poison">
+								<img src="https://raw.githubusercontent.com/msikma/pokesprite/master/misc/types/gen8/poison.png" class="card-img-top">
+								<div class="card-body rounded bg-warning">
+									<p class="card-text">x½</p>
+								</div>
+							</div>
+							<div class="col-1 card text-center border border-0" data-toggle="tooltip" title="ground">
+								<img src="https://raw.githubusercontent.com/msikma/pokesprite/master/misc/types/gen8/ground.png" class="card-img-top">
+								<div class="card-body rounded">
+									<p class="card-text"></p>
+								</div>
+							</div>
+						</div>
+						<!-- row 2 -->
+						<div class="py-3 row no-gutters justify-content-center" style="font-weight:bold">
+							<div class="col-1 card text-center border border-0" data-toggle="tooltip" title="flying">
+								<img src="https://raw.githubusercontent.com/msikma/pokesprite/master/misc/types/gen8/flying.png" class="card-img-top">
+								<div class="card-body rounded">
+									<p class="card-text"></p>
+								</div>
+							</div>
+							<div class="col-1 card text-center border border-0" data-toggle="tooltip" title="psychic">
+								<img src="https://raw.githubusercontent.com/msikma/pokesprite/master/misc/types/gen8/psychic.png" class="card-img-top">
+								<div class="card-body rounded">
+									<p class="card-text"></p>
+								</div>
+							</div>
+							<div class="col-1 card text-center border border-0" data-toggle="tooltip" title="bug">
+								<img src="https://raw.githubusercontent.com/msikma/pokesprite/master/misc/types/gen8/bug.png" class="card-img-top">
+								<div class="card-body rounded">
+									<p class="card-text"></p>
+								</div>
+							</div>
+							<div class="col-1 card text-center border border-0" data-toggle="tooltip" title="rock">
+								<img src="https://raw.githubusercontent.com/msikma/pokesprite/master/misc/types/gen8/rock.png" class="card-img-top">
+								<div class="card-body rounded bg-warning">
+									<p class="card-text">x½</p>
+								</div>
+							</div>
+							<div class="col-1 card text-center border border-0" data-toggle="tooltip" title="ghost">
+								<img src="https://raw.githubusercontent.com/msikma/pokesprite/master/misc/types/gen8/ghost.png" class="card-img-top">
+								<div class="card-body rounded">
+									<p class="card-text"></p>
+								</div>
+							</div>
+							<div class="col-1 card text-center border border-0" data-toggle="tooltip" title="dragon">
+								<img src="https://raw.githubusercontent.com/msikma/pokesprite/master/misc/types/gen8/dragon.png" class="card-img-top">
+								<div class="card-body rounded bg-success">
+									<p class="card-text">x2</p>
+								</div>
+							</div>
+							<div class="col-1 card text-center border border-0" data-toggle="tooltip" title="dark">
+								<img src="https://raw.githubusercontent.com/msikma/pokesprite/master/misc/types/gen8/dark.png" class="card-img-top">
+								<div class="card-body rounded">
+									<p class="card-text"></p>
+								</div>
+							</div>
+							<div class="col-1 card text-center border border-0" data-toggle="tooltip" title="steel">
+								<img src="https://raw.githubusercontent.com/msikma/pokesprite/master/misc/types/gen8/steel.png" class="card-img-top">
+								<div class="card-body rounded">
+									<p class="card-text"></p>
+								</div>
+							</div>
+							<div class="col-1 card text-center border border-0" data-toggle="tooltip" title="fairy">
+								<img src="https://raw.githubusercontent.com/msikma/pokesprite/master/misc/types/gen8/fairy.png" class="card-img-top">
+								<div class="card-body rounded bg-success">
+									<p class="card-text">x2</p>
+								</div>
+							</div>
+						</div>
+						<!-- misc game info -->
+						<div class="card d-flex text-primary" style="flex-direction:row; border:none; font-size:1.5rem; align-items:center;"> MISCELLANEOUS
+							<hr class="text-warning" style="flex-grow: 1; margin: 10px; border:1px dashed;">
+						</div>
+						<div class="row no-gutters mb-2 p-3">
+							<div class="col-3 text-right" style="font-weight:bold">EV Yield</div>
+							<div class="col-3 pl-3">1 HP</div>
+							<div class="col-3 text-right" style="font-weight:bold">Catch rate</div>
+							<div class="col-3 pl-3">3</div>
+							<div class="col-3 text-right" style="font-weight:bold">Base Friendship</div>
+							<div class="col-3 pl-3">0</div>
+							<div class="col-3 text-right" style="font-weight:bold">Pokedex Color</div>
+							<div class="col-3 pl-3">White</div>
+							<div class="col-3 text-right" style="font-weight:bold">Base Exp Yield</div>
+							<div class="col-3 pl-3">3</div>
+							<div class="col-3 text-right" style="font-weight:bold">Exp Growth</div>
+							<div class="col-3 pl-3">Slow</div>
+							<div class="col-3 text-right" style="font-weight:bold">Egg Group</div>
+							<div class="col-3 pl-3">Undiscovered</div>
+							<div class="col-3 text-right" style="font-weight:bold">Egg Cycles</div>
+							<div class="col-3 pl-3">120</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- MOVE TABLES -->
+			<!-- these will make your code super long - to add scroll bars use style="max-height:200px; overflow-y:auto;" in the div before the table -->
+			<!-- column order: level, move name, type, category, power, acc, PP -->
+			<div class="tab-pane fade" id="tab2" style="border:none">
+				<div class="card p-3" style="border:none">
+					<div class="p-3">
+						<!-- LEVEL UP MOVE TABLE -->
+						<div class="card d-flex text-primary" style="flex-direction:row; border:none; font-size:1.5rem; align-items:center;"> LEVEL UP
+							<hr class="text-warning" style="flex-grow: 1; margin: 10px; border:1px dashed;">
+						</div>
+						<div class="p-3" style="min-width:200px; overflow-x:auto;">
+							<table class="table table-sm table-bordered table-striped">
+								<thead>
+									<tr>
+										<th>Level</th>
+										<th>Move</th>
+										<th>Type</th>
+										<th>Category</th>
+										<th>Power</th>
+										<th>Accuracy</th>
+										<th>PP</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>1</td>
+										<td>Tackle</td>
+										<td style="background-color:#A8A878">Normal</td>
+										<td style="background-color:#C92112">Physical</td>
+										<td>40</td>
+										<td>100%</td>
+										<td>35</td>
+									</tr>
+									<tr>
+										<td>50</td>
+										<td>Gravity</td>
+										<td style="background-color:#F85888">Psychic</td>
+										<td style="background-color:#8C888C">Status</td>
+										<td>--</td>
+										<td>--</td>
+										<td>5</td>
+									</tr>
+									<tr>
+										<td>100</td>
+										<td>Draco Meteor</td>
+										<td style="background-color:#7038F8">Normal</td>
+										<td style="background-color:#4F5870">Special</td>
+										<td>130</td>
+										<td>90%</td>
+										<td>5</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<!-- TM / HM MOVE TABLE -->
+						<div class="card d-flex text-primary" style="flex-direction:row; border:none; font-size:1.5rem; align-items:center;"> TM / HM
+							<hr class="text-warning" style="flex-grow: 1; margin: 10px; border:1px dashed;">
+						</div>
+						<div class="p-3" style="min-width:200px; overflow-x:auto;">
+							<table class="table table-sm table-bordered table-striped">
+								<thead>
+									<tr>
+										<th>Level</th>
+										<th>Move</th>
+										<th>Type</th>
+										<th>Category</th>
+										<th>Power</th>
+										<th>Accuracy</th>
+										<th>PP</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>1</td>
+										<td>Tackle</td>
+										<td style="background-color:#A8A878">Normal</td>
+										<td style="background-color:#C92112">Physical</td>
+										<td>40</td>
+										<td>100%</td>
+										<td>35</td>
+									</tr>
+									<tr>
+										<td>50</td>
+										<td>Gravity</td>
+										<td style="background-color:#F85888">Psychic</td>
+										<td style="background-color:#8C888C">Status</td>
+										<td>--</td>
+										<td>--</td>
+										<td>5</td>
+									</tr>
+									<tr>
+										<td>100</td>
+										<td>Draco Meteor</td>
+										<td style="background-color:#7038F8">Normal</td>
+										<td style="background-color:#4F5870">Special</td>
+										<td>130</td>
+										<td>90%</td>
+										<td>5</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<!-- MOVE TUTOR TABLE -->
+						<div class="card d-flex text-primary" style="flex-direction:row; border:none; font-size:1.5rem; align-items:center;"> MOVE TUTOR
+							<hr class="text-warning" style="flex-grow: 1; margin: 10px; border:1px dashed;">
+						</div>
+						<div class="p-3" style="min-width:200px; overflow-x:auto;">
+							<table class="table table-sm table-bordered table-striped">
+								<thead>
+									<tr>
+										<th>Level</th>
+										<th>Move</th>
+										<th>Type</th>
+										<th>Category</th>
+										<th>Power</th>
+										<th>Accuracy</th>
+										<th>PP</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>1</td>
+										<td>Tackle</td>
+										<td style="background-color:#A8A878">Normal</td>
+										<td style="background-color:#C92112">Physical</td>
+										<td>40</td>
+										<td>100%</td>
+										<td>35</td>
+									</tr>
+									<tr>
+										<td>50</td>
+										<td>Gravity</td>
+										<td style="background-color:#F85888">Psychic</td>
+										<td style="background-color:#8C888C">Status</td>
+										<td>--</td>
+										<td>--</td>
+										<td>5</td>
+									</tr>
+									<tr>
+										<td>100</td>
+										<td>Draco Meteor</td>
+										<td style="background-color:#7038F8">Normal</td>
+										<td style="background-color:#4F5870">Special</td>
+										<td>130</td>
+										<td>90%</td>
+										<td>5</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<!-- EGG MOVE TABLE -->
+						<div class="card d-flex text-primary" style="flex-direction:row; border:none; font-size:1.5rem; align-items:center;"> EGG MOVES
+							<hr class="text-warning" style="flex-grow: 1; margin: 10px; border:1px dashed;">
+						</div>
+						<div class="p-3" style="min-width:200px; overflow-x:auto;">
+							<table class="table table-sm table-bordered table-striped">
+								<thead>
+									<tr>
+										<th>Level</th>
+										<th>Move</th>
+										<th>Type</th>
+										<th>Category</th>
+										<th>Power</th>
+										<th>Accuracy</th>
+										<th>PP</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>1</td>
+										<td>Tackle</td>
+										<td style="background-color:#A8A878">Normal</td>
+										<td style="background-color:#C92112">Physical</td>
+										<td>40</td>
+										<td>100%</td>
+										<td>35</td>
+									</tr>
+									<tr>
+										<td>50</td>
+										<td>Gravity</td>
+										<td style="background-color:#F85888">Psychic</td>
+										<td style="background-color:#8C888C">Status</td>
+										<td>--</td>
+										<td>--</td>
+										<td>5</td>
+									</tr>
+									<tr>
+										<td>100</td>
+										<td>Draco Meteor</td>
+										<td style="background-color:#7038F8">Normal</td>
+										<td style="background-color:#4F5870">Special</td>
+										<td>130</td>
+										<td>90%</td>
+										<td>5</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- BIOLOGY TAB -->
+			<div class="tab-pane fade" id="tab3" style="border:none">
+				<div class="card p-3" style="border:none">
+					<div class="p-3">
+						<div class="card d-flex text-primary" style="flex-direction:row; border:none; font-size:1.5rem; align-items:center;"> BIOLOGY
+							<hr class="text-warning" style="flex-grow: 1; margin: 10px; border:1px dashed;">
+						</div>
+						<div class="p-3">
+							<p>physical description, abilities, behavior, etc</p>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sollicitudin elit sed tellus blandit viverra sed eget odio. Donec accumsan tempor lacus, et venenatis elit feugiat non. Duis porta eros et velit blandit dapibus. Curabitur ac finibus eros. Duis placerat velit vitae massa sodales, eget mattis nibh pellentesque.</p>
+						</div>
+						<div class="card d-flex text-primary" style="flex-direction:row; border:none; font-size:1.5rem; align-items:center;"> HABITAT
+							<hr class="text-warning" style="flex-grow: 1; margin: 10px; border:1px dashed;">
+						</div>
+						<div class="p-3">
+							<p>habitat, location "in game," etc</p>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sollicitudin elit sed tellus blandit viverra sed eget odio. Donec accumsan tempor lacus, et venenatis elit feugiat non. Duis porta eros et velit blandit dapibus. Curabitur ac finibus eros. Duis placerat velit vitae massa sodales, eget mattis nibh pellentesque.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- SPRITES TAB -->
+			<!-- this one can be repurposed for story info or whatever else you want -->
+			<div class="tab-pane fade" id="tab4" style="border:none">
+				<div class="card p-3" style="border:none">
+					<div class="p-3">
+						<div class="card d-flex text-primary" style="flex-direction:row; border:none; font-size:1.5rem; align-items:center;"> SPRITES
+							<hr class="text-warning" style="flex-grow: 1; margin: 10px; border:1px dashed;">
+						</div>
+						<div class="row mb-1 p-3 justify-content-center">
+							<div class="col-sm-4">
+								<div class="card rounded" style=" border:none; min-height: 150px; bg-primary;">
+									<div class="card-body">
+										<img class="card-img-top rounded" src="https://archives.bulbagarden.net/media/upload/thumb/a/a8/0445Garchomp.png/250px-0445Garchomp.png">
+										<p class="card-text p-1 text-center">Normal</p>
+									</div>
+								</div>
+							</div>
+							<div class="col-sm-4">
+								<div class="card rounded" style=" border:none; min-height: 150px; bg-primary;">
+									<div class="card-body">
+										<img class="card-img-top rounded" src="https://archives.bulbagarden.net/media/upload/thumb/a/a8/0445Garchomp.png/250px-0445Garchomp.png">
+										<p class="card-text p-1 text-center">Shiny</p>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="px-3">
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sollicitudin elit sed tellus blandit viverra sed eget odio. Donec accumsan tempor lacus, et venenatis elit feugiat non. Duis porta eros et velit blandit dapibus. Curabitur ac finibus eros. Duis placerat velit vitae massa sodales, eget mattis nibh pellentesque.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- CREDITS - DO NOT REMOVE -->
+	<!-- If you want to change *where* it's placed that's fine, just please do not remove it outright.-->
+	<!-- If Frankensteining with other codes, please make sure all coders are credited. -->
+	<p style="text-align: right; "><span style="font-size:.75rem;" data-toggle="tooltip" data-placement="top" title="code by cyborb"><a href="https://toyhou.se/cyborb"><i class="fa fa-star"></i></a></span> - <span style="text-align:right;font-size:.75rem;" data-toggle="tooltip" data-placement="top" title="inspired by code from skygummi"><a href="https://toyhou.se/skygummi"><i class="fa-duotone fa-comet"></i></a></span> - <span style="text-align:right;font-size:.75rem;" data-toggle="tooltip" data-placement="top" title="type icons from msikma"><a href="https://msikma.github.io/pokesprite/index.html"><i class="fa-duotone fa-image"></i></a></span></p>
+</div>
